@@ -43,9 +43,7 @@ else{
 										<tr>
 											<th>#</th>
 											<th> User Email</th>
-											<th>User IP </th>
 											<th>Login Time</th>
-											<th>Logout Time </th>
 											<th>Status </th>
 											
 										</tr>
@@ -60,9 +58,7 @@ while($row=mysqli_fetch_array($query))
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($row['userEmail']);?></td>
-											<td><?php echo htmlentities($row['userip']);?></td>
 											<td> <?php echo htmlentities($row['loginTime']);?></td>
-											<td><?php echo htmlentities($row['logout']); ?></td>
 										<td><?php $st=$row['status'];
 
 if($st==1)

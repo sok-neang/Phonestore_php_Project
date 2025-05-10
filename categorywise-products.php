@@ -24,29 +24,31 @@ include_once('includes/config.php');
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
 <?php 
+
 $cid=$_GET['cid'];
 $query=mysqli_query($con,"select category.id as catid,category.categoryName from category where id='$cid' ");
 while($result=mysqli_fetch_array($query))
 { ?>
 
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder"><?php echo $result['categoryName'];?></h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Catgeory Products/Items</p>
-                </div>
-            <?php } ?>
-            </div>
+<div class="text-center text-white">
+    <h1 class="display-4 fw-bolder"><?php echo $result['categoryName'];?></h1>
+    <p class="lead fw-normal text-white-50 mb-0">Catgeory Products/Items</p>
+</div>
+
+<?php } ?>
+    </div>
         </header>
-        <!-- Section-->
-        <section class="py-5">
+            <!-- Section-->
+            <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-<?php 
-$query=mysqli_query($con,"select products.id as pid,products.productImage1,products.productName,products.productPriceBeforeDiscount,products.productPrice from products where category='$cid' order by pid desc  ");
-$count=mysqli_num_rows($query);
-if($count>0){
-while($row=mysqli_fetch_array($query))
-{
-?> 
+                    <?php 
+                    $query=mysqli_query($con,"select products.id as pid,products.productImage1,products.productName,products.productPriceBeforeDiscount,products.productPrice from products where category='$cid' order by pid desc  ");
+                    $count=mysqli_num_rows($query);
+                    if($count>0){
+                    while($row=mysqli_fetch_array($query))
+                    {
+                    ?> 
 
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -67,14 +69,12 @@ while($row=mysqli_fetch_array($query))
                             </div>
                         </div>
                     </div>
-                <?php } }  else{ ?>
-     <h4 style="color:red">No Record found</h4>
-<?php } ?>
-                </div>
+                    <?php } }  else{ ?>
+                        <h4 style="color:red">No Record found</h4>
+                    <?php } ?>
             </div>
-
- 
-</div>
+        </div>
+    </div>
         </section>
         <!-- Footer-->
    <?php include_once('includes/footer.php'); ?>
