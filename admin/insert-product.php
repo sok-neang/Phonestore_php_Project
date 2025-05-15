@@ -53,10 +53,6 @@ $_SESSION['msg']="Product Inserted Successfully !!";
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
-    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    bkLib.onDomLoaded(nicEditors.allTextAreas);
-    </script>
 
     <script>
     function getSubcat(val) {
@@ -87,13 +83,13 @@ $_SESSION['msg']="Product Inserted Successfully !!";
             <div class="row">
                 <?php include('include/sidebar.php');?>
                 <div class="span9">
-                    <div class="content">
+                    <div class="content ">
 
                         <div class="module">
                             <div class="module-head">
-                                <h3>Insert Product</h3>
+                                <h2>Insert Product</h2>
                             </div>
-                            <div class="module-body">
+                            <div class="module-body ">
 
                                 <?php if(isset($_POST['submit']))
 {?>
