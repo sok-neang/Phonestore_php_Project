@@ -20,7 +20,6 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		}
 	}
 }
-// COde for Wishlist
 if(isset($_GET['pid']) && $_GET['action']=="wishlist" ){
 	if(strlen($_SESSION['login'])==0)
     {   
@@ -39,7 +38,6 @@ header('location:my-wishlist.php');
 <html lang="en">
 
 <head>
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -50,21 +48,16 @@ header('location:my-wishlist.php');
 
     <title>Product Category</title>
 
-    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <!-- Customizable CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/red.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
     <link href="assets/css/lightbox.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/rateit.css">
     <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-    <!-- Demo Purpose Only. Should be removed in production -->
     <link rel="stylesheet" href="assets/css/config.css">
 
     <link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
@@ -72,23 +65,13 @@ header('location:my-wishlist.php');
     <link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
     <link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
     <link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
-    <!-- Demo Purpose Only. Should be removed in production : END -->
 
 
-    <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-    <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 
-    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-    <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
-    <!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
 
 </head>
 
@@ -96,22 +79,15 @@ header('location:my-wishlist.php');
 
     <header class="header-style-1">
 
-        <!-- ============================================== TOP MENU ============================================== -->
         <?php include('includes/top-header.php');?>
-        <!-- ============================================== TOP MENU : END ============================================== -->
         <?php include('includes/main-header.php');?>
-        <!-- ============================================== NAVBAR ============================================== -->
         <?php include('includes/menu-bar.php');?>
-        <!-- ============================================== NAVBAR : END ============================================== -->
-
     </header>
-    <!-- ============================================== HEADER : END ============================================== -->
-    </div><!-- /.breadcrumb -->
+    </div>
     <div class="body-content outer-top-xs">
         <div class='container'>
             <div class='row outer-bottom-sm'>
                 <div class='col-md-12'>
-                    <!-- ========================================== SECTION – HERO ========================================= -->
 
                     <div id="category" class="category-carousel hidden-xs">
                         <div class="item">
@@ -236,16 +212,16 @@ while ($row=mysqli_fetch_array($ret))
 
 
 
-                                    </div><!-- /.row -->
-                                </div><!-- /.category-product -->
+                                    </div>
+                                </div>
 
-                            </div><!-- /.tab-pane -->
+                            </div>
 
 
 
-                        </div><!-- /.search-result-container -->
+                        </div>
 
-                    </div><!-- /.col -->
+                    </div>
                 </div>
             </div>
             <?php include('includes/brands-slider.php');?>
@@ -269,7 +245,6 @@ while ($row=mysqli_fetch_array($ret))
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/scripts.js"></script>
 
-    <!-- For demo purposes – can be removed on production -->
 
     <script src="switchstylesheet/switchstylesheet.js"></script>
 
@@ -288,7 +263,6 @@ while ($row=mysqli_fetch_array($ret))
         $('.show-theme-options').delay(2000).trigger('click');
     });
     </script>
-    <!-- For demo purposes – can be removed on production : End -->
 
 
 

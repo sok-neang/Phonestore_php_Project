@@ -6,14 +6,11 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-	$pid=intval($_GET['id']);// product id
+	$pid=intval($_GET['id']);
 if(isset($_POST['submit']))
 {
 	$productname=$_POST['productName'];
 	$productimage2=$_FILES["productimage2"]["name"];
-
-//dir="productimages";
-//unlink($dir.'/'.$pimage);
 
 
 	move_uploaded_file($_FILES["productimage2"]["tmp_name"],"productimages/$pid/".$_FILES["productimage2"]["name"]);
@@ -30,7 +27,7 @@ $_SESSION['msg']="Product Image Updated Successfully !!";
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin| Update Product Image</title>
+    <title>Update Product Image</title>
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="css/theme.css" rel="stylesheet">

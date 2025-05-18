@@ -2,30 +2,24 @@
 session_start();
 include_once('includes/config.php');
 
-// Redirect if not logged in
 if (strlen($_SESSION["aid"]) == 0) {
     header('location:logout.php');
     exit();
-} else {
-    // Handle form submission
-    if (isset($_POST['submit'])) {
+} else {    if (isset($_POST['submit'])) {
         $currentimage = $_POST['currentimage'];
         $imagepath = "productimages/" . $currentimage;
 
         $productimage3 = $_FILES["productimage3"]["name"];
         $extension = substr($productimage3, strrpos($productimage3, '.'));
 
-        // Generate new image file name
         $imgnewfile = md5($productimage3 . time()) . $extension;
         move_uploaded_file($_FILES["productimage3"]["tmp_name"], "productimages/" . $imgnewfile);
 
         $updatedby = $_SESSION['aid'];
         $pid = intval($_GET['id']);
 
-        // Update database
         $sql = mysqli_query($con, "UPDATE products SET productImage3='$imgnewfile', lastUpdatedBy='$updatedby' WHERE id='$pid'");
 
-        // Delete old image
         if (file_exists($imagepath)) {
             unlink($imagepath);
         }
@@ -39,7 +33,7 @@ if (strlen($_SESSION["aid"]) == 0) {
 
 <head>
     <meta charset="utf-8" />
-    <title>Shopping Portal | Update Image</title>
+    <title>Update Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/all.min.js" crossorigin="anonymous"></script>

@@ -7,21 +7,18 @@
                     <img data-echo="brandsimage/apple-logo.jpg" src="assets/images/blank.gif" alt="">
                 </a>
             </div>
-            <!--/.item-->
 
             <div class="item">
                 <a href="#" class="image">
                     <img data-echo="brandsimage/asus-logo.jpg" src="assets/images/blank.gif" alt="">
                 </a>
             </div>
-            <!--/.item-->
 
             <div class="item">
                 <a href="#" class="image">
                     <img data-echo="brandsimage/nokia-logo.jpg" src="assets/images/blank.gif" alt="">
                 </a>
             </div>
-            <!--/.item-->
 
             <div class="item">
                 <a href="#" class="image">
@@ -83,10 +80,7 @@
                 </a>
             </div>
 
+        </div>
+    </div>
 
-
-
-        </div><!-- /.owl-carousel #logo-slider -->
-    </div><!-- /.logo-slider-inner -->
-
-</div><!-- /.logo-slider -->
+</div>

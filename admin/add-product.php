@@ -5,7 +5,6 @@ include_once('includes/config.php');
 if (strlen($_SESSION["aid"]) == 0) {
     header('location:logout.php');
 } else {
-    // For Adding Products
     if (isset($_POST['submit'])) {
         $category = $_POST['category'];
         $subcat = $_POST['subcategory'];
@@ -21,8 +20,7 @@ if (strlen($_SESSION["aid"]) == 0) {
         $productimage3 = $_FILES["productimage3"]["name"];
         $extension1 = substr($productimage1, strlen($productimage1) - 4, strlen($productimage1));
         $extension2 = substr($productimage2, strlen($productimage2) - 4, strlen($productimage2));
-        $extension3 = substr($productimage3, strlen($productimage3) - 4, strlen($productimage3));
-        // Renaming the image file
+        $extension3 = substr($productimage3, strlen($productimage3) - 4, strlen($productimage3)); 
         $imgnewfile1 = md5($productimage1 . time()) . $extension1;
         $imgnewfile2 = md5($productimage2 . time()) . $extension2;
         $imgnewfile3 = md5($productimage3 . time()) . $extension3;
@@ -40,29 +38,31 @@ if (strlen($_SESSION["aid"]) == 0) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shopping Portal | Add Products</title>
+    <title> Add Products</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/all.min.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
-        function getSubcat(val) {
-            $.ajax({
-                type: "POST",
-                url: "get_subcat.php",
-                data: 'cat_id=' + val,
-                success: function(data) {
-                    $("#subcategory").html(data);
-                }
-            });
-        }
+    function getSubcat(val) {
+        $.ajax({
+            type: "POST",
+            url: "get_subcat.php",
+            data: 'cat_id=' + val,
+            success: function(data) {
+                $("#subcategory").html(data);
+            }
+        });
+    }
     </script>
 </head>
+
 <body>
     <?php include_once('includes/header.php');?>
     <div id="layoutSidenav">
@@ -81,13 +81,15 @@ if (strlen($_SESSION["aid"]) == 0) {
                                 <div class="row mb-3">
                                     <div class="col-2">Category Name</div>
                                     <div class="col-4">
-                                        <select name="category" id="category" class="form-control" onChange="getSubcat(this.value);" required>
+                                        <select name="category" id="category" class="form-control"
+                                            onChange="getSubcat(this.value);" required>
                                             <option value="">Select Category</option>
                                             <?php
                                             $query = mysqli_query($con, "SELECT * FROM category");
                                             while ($row = mysqli_fetch_array($query)) {
                                             ?>
-                                                <option value="<?php echo $row['id'];?>"><?php echo $row['categoryName'];?></option>
+                                            <option value="<?php echo $row['id'];?>"><?php echo $row['categoryName'];?>
+                                            </option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -103,38 +105,50 @@ if (strlen($_SESSION["aid"]) == 0) {
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Name</div>
-                                    <div class="col-4"><input type="text" name="productName" placeholder="Enter Product Name" class="form-control" required></div>
+                                    <div class="col-4"><input type="text" name="productName"
+                                            placeholder="Enter Product Name" class="form-control" required></div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Company</div>
-                                    <div class="col-4"><input type="text" name="productCompany" placeholder="Enter Product Company Name" class="form-control" required></div>
+                                    <div class="col-4"><input type="text" name="productCompany"
+                                            placeholder="Enter Product Company Name" class="form-control" required>
+                                    </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Price Before Discount</div>
-                                    <div class="col-4"><input type="text" name="productpricebd" placeholder="Enter Product Price Before Discount" class="form-control" required></div>
+                                    <div class="col-4"><input type="text" name="productpricebd"
+                                            placeholder="Enter Product Price Before Discount" class="form-control"
+                                            required></div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Price After Discount (Selling Price)</div>
-                                    <div class="col-4"><input type="text" name="productprice" placeholder="Enter Product Price After Discount" class="form-control" required></div>
+                                    <div class="col-4"><input type="text" name="productprice"
+                                            placeholder="Enter Product Price After Discount" class="form-control"
+                                            required></div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Description</div>
-                                    <div class="col-4"><textarea name="productDescription" placeholder="Enter Product Description" rows="6" class="form-control"></textarea></div>
+                                    <div class="col-4"><textarea name="productDescription"
+                                            placeholder="Enter Product Description" rows="6"
+                                            class="form-control"></textarea></div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Shipping Charge</div>
-                                    <div class="col-4"><input type="text" name="productShippingcharge" placeholder="Enter Product Shipping Charge" class="form-control" required></div>
+                                    <div class="col-4"><input type="text" name="productShippingcharge"
+                                            placeholder="Enter Product Shipping Charge" class="form-control" required>
+                                    </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Availability</div>
                                     <div class="col-4">
-                                        <select name="productAvailability" id="productAvailability" class="form-control" required>
+                                        <select name="productAvailability" id="productAvailability" class="form-control"
+                                            required>
                                             <option value="">Select</option>
                                             <option value="In Stock">In Stock</option>
                                             <option value="Out of Stock">Out of Stock</option>
@@ -144,21 +158,26 @@ if (strlen($_SESSION["aid"]) == 0) {
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Featured Image</div>
-                                    <div class="col-4"><input type="file" name="productimage1" id="productimage1" class="form-control" accept="image/*" title="Accept images only" required></div>
+                                    <div class="col-4"><input type="file" name="productimage1" id="productimage1"
+                                            class="form-control" accept="image/*" title="Accept images only" required>
+                                    </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Image 2</div>
-                                    <div class="col-4"><input type="file" name="productimage2" class="form-control" accept="image/*" title="Accept images only" required></div>
+                                    <div class="col-4"><input type="file" name="productimage2" class="form-control"
+                                            accept="image/*" title="Accept images only" required></div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-2">Product Image 3</div>
-                                    <div class="col-4"><input type="file" name="productimage3" class="form-control" accept="image/*" title="Accept images only" required></div>
+                                    <div class="col-4"><input type="file" name="productimage3" class="form-control"
+                                            accept="image/*" title="Accept images only" required></div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-2"><button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+                                    <div class="col-2"><button type="submit" name="submit"
+                                            class="btn btn-primary">Submit</button></div>
                                 </div>
                             </form>
                         </div>
@@ -171,5 +190,6 @@ if (strlen($_SESSION["aid"]) == 0) {
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
 <?php } ?>

@@ -6,7 +6,6 @@ error_reporting(0);
 if (strlen($_SESSION["aid"]) == 0) {
     header('location:logout.php');
 } else {
-    // For Adding Sub-categories
     if (isset($_POST['submit'])) {
         $category = $_POST['category'];
         $subcat = $_POST['subcategory'];
@@ -19,16 +18,18 @@ if (strlen($_SESSION["aid"]) == 0) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shopping Portal | Add Subcategories</title>
+    <title>Add Subcategories</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/all.min.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <?php include_once('includes/header.php');?>
     <div id="layoutSidenav">
@@ -53,7 +54,8 @@ if (strlen($_SESSION["aid"]) == 0) {
                                             $query = mysqli_query($con, "SELECT * FROM category");
                                             while ($row = mysqli_fetch_array($query)) {
                                             ?>
-                                                <option value="<?php echo $row['id'];?>"><?php echo $row['categoryName'];?></option>
+                                            <option value="<?php echo $row['id'];?>"><?php echo $row['categoryName'];?>
+                                            </option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -61,11 +63,13 @@ if (strlen($_SESSION["aid"]) == 0) {
 
                                 <div class="row mb-3">
                                     <div class="col-2">Sub Category name</div>
-                                    <div class="col-4"><input type="text" placeholder="Enter SubCategory Name" name="subcategory" class="form-control" required></div>
+                                    <div class="col-4"><input type="text" placeholder="Enter SubCategory Name"
+                                            name="subcategory" class="form-control" required></div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-2"><button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+                                    <div class="col-2"><button type="submit" name="submit"
+                                            class="btn btn-primary">Submit</button></div>
                                 </div>
                             </form>
                         </div>
@@ -78,5 +82,6 @@ if (strlen($_SESSION["aid"]) == 0) {
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
 <?php } ?>

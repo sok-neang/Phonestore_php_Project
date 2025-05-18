@@ -38,7 +38,7 @@ while($row=mysqli_fetch_array($sql))
                                 <a href="admin/" style="color:#000"> Admin Login</a>
 
                             </li>
-                        </ul><!-- /.navbar-nav -->
+                        </ul>
                         <div class="clearfix"></div>
                     </div>
                 </div>

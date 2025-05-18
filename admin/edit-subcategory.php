@@ -24,7 +24,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Edit SubCategory</title>
+    <title>Edit SubCategory</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/theme.css">

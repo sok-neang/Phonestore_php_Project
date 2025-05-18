@@ -17,16 +17,18 @@ if (strlen($_SESSION["aid"]) == 0) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shopping Portal | Admin Profile</title>
+    <title>Admin Profile</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="js/all.min.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <?php include_once('includes/header.php');?>
     <div id="layoutSidenav">
@@ -46,31 +48,40 @@ if (strlen($_SESSION["aid"]) == 0) {
                             $query = mysqli_query($con, "SELECT * FROM tbladmin WHERE id='$id'");
                             while ($row = mysqli_fetch_array($query)) {
                             ?>
-                                <form method="post">
-                                    <div class="row mb-3">
-                                        <div class="col-3">Admin userName (used for login)</div>
-                                        <div class="col-4"><input type="text" value="<?php echo htmlentities($row['username']);?>" name="username" class="form-control" readonly></div>
-                                    </div>
+                            <form method="post">
+                                <div class="row mb-3">
+                                    <div class="col-3">Admin userName (used for login)</div>
+                                    <div class="col-4"><input type="text"
+                                            value="<?php echo htmlentities($row['username']);?>" name="username"
+                                            class="form-control" readonly></div>
+                                </div>
 
-                                    <div class="row mb-3">
-                                        <div class="col-3">Contact No.</div>
-                                        <div class="col-4"><input type="text" value="<?php echo htmlentities($row['contactNumber']);?>" name="cnumber" class="form-control" required></div>
-                                    </div>
+                                <div class="row mb-3">
+                                    <div class="col-3">Contact No.</div>
+                                    <div class="col-4"><input type="text"
+                                            value="<?php echo htmlentities($row['contactNumber']);?>" name="cnumber"
+                                            class="form-control" required></div>
+                                </div>
 
-                                    <div class="row mb-3">
-                                        <div class="col-3">Reg. Date</div>
-                                        <div class="col-4"><input type="text" value="<?php echo htmlentities($row['creationDate']);?>" name="regdate" class="form-control" readonly></div>
-                                    </div>
+                                <div class="row mb-3">
+                                    <div class="col-3">Reg. Date</div>
+                                    <div class="col-4"><input type="text"
+                                            value="<?php echo htmlentities($row['creationDate']);?>" name="regdate"
+                                            class="form-control" readonly></div>
+                                </div>
 
-                                    <div class="row mb-3">
-                                        <div class="col-3">Profile Last Updation Date</div>
-                                        <div class="col-4"><input type="text" value="<?php echo htmlentities($row['updationDate']);?>" name="updatedate" class="form-control" readonly></div>
-                                    </div>
+                                <div class="row mb-3">
+                                    <div class="col-3">Profile Last Updation Date</div>
+                                    <div class="col-4"><input type="text"
+                                            value="<?php echo htmlentities($row['updationDate']);?>" name="updatedate"
+                                            class="form-control" readonly></div>
+                                </div>
 
-                                    <div class="row">
-                                        <div class="col-7 text-center"><button type="submit" name="submit" class="btn btn-primary">Update</button></div>
-                                    </div>
-                                </form>
+                                <div class="row">
+                                    <div class="col-7 text-center"><button type="submit" name="submit"
+                                            class="btn btn-primary">Update</button></div>
+                                </div>
+                            </form>
                             <?php } ?>
                         </div>
                     </div>
@@ -82,5 +93,6 @@ if (strlen($_SESSION["aid"]) == 0) {
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
 <?php } ?>

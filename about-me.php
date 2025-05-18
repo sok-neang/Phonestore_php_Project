@@ -26,7 +26,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 <html lang="en">
 
 <head>
-    <!-- Meta -->
+
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -35,142 +35,66 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
     <meta name="keywords" content="MediaCenter, Template, eCommerce">
     <meta name="robots" content="all">
 
-    <title>Shopping Portal Home Page</title>
+    <title>Home Page</title>
 
-    <!-- Bootstrap Core CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">`
 
-    <!-- Customizable CSS -->
+
     <link rel="stylesheet" href="assets/css/main.css">
 
 
-    <style>
-    /* General Styles */
-    .section-title {
-        position: relative;
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-
-    .section-title:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 50px;
-        height: 3px;
-        background: #743457;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-        background-size: cover;
-        background-position: center;
-        color: white;
-        height: 100vh;
-        min-height: 500px;
-        display: flex;
-        align-items: center;
-    }
-
-    .hero-section h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-    }
-
-    .hero-section p {
-        font-size: 1.5rem;
-        letter-spacing: 3px;
-    }
-
-    /* About Section */
-    .about-section {
-        padding: 100px 0;
-    }
-
-    .about-section img {
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Stats Section */
-    .stats-section {
-        padding: 60px 0;
-    }
-
-    .stats-section h2 {
-        color: #743457;
-    }
-
-    /* Testimonials */
-    .testimonials .card {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s;
-    }
-
-    .testimonials .card:hover {
-        transform: translateY(-10px);
-    }
-
-    /* Progress Bars */
-    .progress {
-        height: 8px;
-        border-radius: 4px;
-    }
-
-    .progress-bar {
-        background-color: #743457;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .hero-section h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero-section p {
-            font-size: 1rem;
-        }
-
-        .stats-section h2 {
-            font-size: 2.5rem;
-        }
-
-        .my_image {
-            margin-bottom: 200px;
-        }
-    }
-    </style>
-
-
-
-    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
 <body>
-    <!-- ============================================== HEADER ============================================== -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">MyWebsite</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="about.php">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
+
+    <div class="container mt-5 fs-4 lh-lg">
+        <div class="text-center mb-4">
+            <h1 class="display-4">📱 Phone Store PHP Project</h1>
+            <p class="lead">A simple PHP-based eCommerce website for selling mobile phones.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">🔧 Features</div>
+            <div class="card-body">
+                <ul>
+                    <li>User Registration and Login System</li>
+                    <li>Product Listing with Detailed Views</li>
+                    <li>Shopping Cart with Add/Remove Functionality</li>
+                    <li>Admin Panel to Manage Products</li>
+                    <li>Order History for Users</li>
+                    <li>Responsive Design with Bootstrap</li>
+                </ul>
             </div>
-        </nav>
-    </header><!-- Hero Section -->
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">🛠️ Technologies Used</div>
+            <div class="card-body">
+                <p><strong>Frontend:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                <p><strong>Backend:</strong> PHP</p>
+                <p><strong>Database:</strong> MySQL</p>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">📁 Project Structure</div>
+            <div class="card-body">
+                <ul>
+                    <li><code>/admin</code> - Admin dashboard and product management</li>
+                    <li><code>/includes</code> - PHP include files (DB connection, headers)</li>
+                    <li><code>/assets</code> - Images, CSS, JS</li>
+                    <li><code>index.php</code> - Homepage</li>
+                    <li><code>login.php</code> and <code>signup.php</code> - User auth</li>
+                    <li><code>my-cart.php</code> - Shopping cart</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
     <div class="hero-section">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -183,7 +107,6 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
         </div>
     </div>
 
-    <!-- Stats Section -->
     <section class="stats-section py-5 bg-light">
         <div class="container">
             <div class="row text-center gap-5">
@@ -203,14 +126,13 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about-section py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <img src="img/my_image.png" width="70%" alt=" Jo Breed" class="img-fluid rounded shadow my_image">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 fs-4 lh-lg">
                     <h3 class="text-uppercase fw-bold mb-3">About Me</h3>
                     <h4 class="fw-semibold mb-3">Computer Science Student at Royal University of Phnom Penh</h4>
                     <p class="text-muted">
@@ -263,11 +185,11 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
         </div>
     </section>
 
-    <!-- Testimonials -->
+
     <section class="testimonials py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center mb-5">WHAT CLIENTS SAY</h2>
-            <div class="row">
+            <div class="row fs-4 lh-lg">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <div class="card h-100">
                         <div class="card-body text-center">
@@ -326,9 +248,6 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
     </footer>
 
 </html>
-
-
-<!-- Bootstrap JS Bundle CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

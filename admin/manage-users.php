@@ -22,7 +22,7 @@ if(isset($_GET['del']))
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin| Manage Users</title>
+    <title>Manage Users</title>
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -66,8 +66,6 @@ if(isset($_GET['del']))
                                             <th> Name</th>
                                             <th>Email </th>
                                             <th>Contact no</th>
-                                            <th>Shippping Address/City/State/Pincode </th>
-                                            <th>Billing Address/City/State/Pincode </th>
                                             <th>Reg. Date </th>
 
                                         </tr>
@@ -84,10 +82,6 @@ while($row=mysqli_fetch_array($query))
                                             <td><?php echo htmlentities($row['name']);?></td>
                                             <td><?php echo htmlentities($row['email']);?></td>
                                             <td> <?php echo htmlentities($row['contactno']);?></td>
-                                            <td><?php echo htmlentities($row['shippingAddress'].",".$row['shippingCity'].",".$row['shippingState']."-".$row['shippingPincode']);?>
-                                            </td>
-                                            <td><?php echo htmlentities($row['billingAddress'].",".$row['billingCity'].",".$row['billingState']."-".$row['billingPincode']);?>
-                                            </td>
                                             <td><?php echo htmlentities($row['regDate']);?></td>
 
                                             <?php $cnt=$cnt+1; } ?>
