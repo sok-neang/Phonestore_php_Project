@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 	$productimage1=$_FILES["productimage1"]["name"];
 	$productimage2=$_FILES["productimage2"]["name"];
 	$productimage3=$_FILES["productimage3"]["name"];
-//for getting product id
+
 $query=mysqli_query($con,"select max(id) as pid from products");
 	$result=mysqli_fetch_array($query);
 	 $productid=$result['pid']+1;
@@ -46,13 +46,17 @@ $_SESSION['msg']="Product Inserted Successfully !!";
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AInsert Product</title>
+    <title>Admin| Insert Product</title>
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="css/theme.css" rel="stylesheet">
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    bkLib.onDomLoaded(nicEditors.allTextAreas);
+    </script>
 
     <script>
     function getSubcat(val) {
@@ -83,13 +87,13 @@ $_SESSION['msg']="Product Inserted Successfully !!";
             <div class="row">
                 <?php include('include/sidebar.php');?>
                 <div class="span9">
-                    <div class="content ">
+                    <div class="content">
 
                         <div class="module">
                             <div class="module-head">
-                                <h2>Insert Product</h2>
+                                <h3>Insert Product</h3>
                             </div>
-                            <div class="module-body ">
+                            <div class="module-body">
 
                                 <?php if(isset($_POST['submit']))
 {?>

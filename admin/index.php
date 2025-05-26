@@ -71,7 +71,7 @@ exit();
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                <div class="module module-login span4 offset4">
+                <div class=" module module-login span4 offset4">
                     <form class="form-vertical" method="post">
                         <div class="module-head">
                             <h3>Sign In</h3>
@@ -95,8 +95,12 @@ exit();
                         <div class="module-foot">
                             <div class="control-group">
                                 <div class="controls clearfix">
-                                    <button type="submit" class="btn btn-primary pull-right"
-                                        name="submit">Login</button>
+                                    <div class="ms-auto text-black" style="color: #743457;">
+                                        <p>Username: admin</p>
+                                        <p>Password: $1234</p>
+                                    </div>
+                                    <button type=" submit" class="btn btn-primary pull-right" name="submit">
+                                        Login</button>
 
                                 </div>
                             </div>

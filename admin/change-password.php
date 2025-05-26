@@ -6,7 +6,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-date_default_timezone_set('Asia/Kolkata');// change according timezone
+date_default_timezone_set('Asia/Kolkata');
 $currentTime = date( 'd-m-Y h:i:s A', time () );
 
 
@@ -114,11 +114,6 @@ $_SESSION['msg']="Old Password not match !!";
                                                 name="confirmpassword" class="span8 tip" required>
                                         </div>
                                     </div>
-
-
-
-
-
                                     <div class="control-group">
                                         <div class="controls">
                                             <button type="submit" name="submit" class="btn">Submit</button>
@@ -127,18 +122,11 @@ $_SESSION['msg']="Old Password not match !!";
                                 </form>
                             </div>
                         </div>
-
-
-
                     </div>
-                    <!--/.content-->
                 </div>
-                <!--/.span9-->
             </div>
         </div>
-        <!--/.container-->
     </div>
-    <!--/.wrapper-->
 
     <?php include('include/footer.php');?>
 

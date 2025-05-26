@@ -215,7 +215,7 @@ body [class*=" icon-"] {
 }
 .form-horizontal .control-group + .control-group,
 .form-vertical .control-group + .control-group {
-  margin-top: 13px;
+  margin-top: 25px;
   padding-top: 13px;
   border-top: 1px solid #f5f5f5;
 }
@@ -1264,7 +1264,7 @@ input[type="submit"].btn-block {
   margin: 0 15px;
 }
 .module-body {
-  padding: 15px;
+  padding: 40px;
 }
 .module-body.table {
   padding: 15px 0;

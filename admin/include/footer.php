@@ -1,5 +1,5 @@
 	<div class="footer">
 	    <div class="container">
-	        <b class="copyright">&copy; Shopping Portal </b>
+	        <b class="copyright">&copy; Phone Shop </b>
 	    </div>
 	</div>
